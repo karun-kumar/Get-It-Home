@@ -71,15 +71,18 @@
         <div class="col-lg-4">
           <h1>Get IT Home</h1>
           <p>B2C Business to Consumer. Where you can go with the latest techologies like Laptops, SmartPhones and SmartTv's. Choose your best product as per your requirement, We Value our customer to satisfy in delivering the products safe and secure payments. </p>
+          
           <div class = "dropdown">
 	          <a class="btn btn-primary btn-lg dropbtn" href="#">Shop Now!</a>
-		          <div class="dropdown-content">
+		          <div class="dropdown-content">   
 				    
-				    <a href="#">link 1</a>
-				    <a href="#">link 2</a>
-				    <a href="#">link 3</a>
+				    <c:forEach items="${categories}" var = "category">
+				    	<a href="#">${category.categoryName}</a>
+				    </c:forEach>
+				  
 				  </div>
           </div>	
+        
         </div>
         
         <!-- /.col-md-4 -->
