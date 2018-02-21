@@ -29,6 +29,12 @@
               <a class="nav-link" href="#">Products</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="category">Category</a>
+            </li>
+          	<li class="nav-item">
+              <a class="nav-link" href="supplier">Supplier</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="contact">Contact</a>
             </li>
           </ul>
