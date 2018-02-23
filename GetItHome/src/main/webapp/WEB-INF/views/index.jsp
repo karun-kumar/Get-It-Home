@@ -12,17 +12,6 @@
     <title>Get-It-Home</title>
 
     <style>
-        
-    body {
-  	padding-top: 54px;
-	}
-
-@media (min-width: 992px) {
-  body {
-    padding-top: 56px;
-  	}
-}
-
 .dropdown {
     position: relative;
     display: inline-block;

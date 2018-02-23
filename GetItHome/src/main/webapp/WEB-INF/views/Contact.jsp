@@ -3,16 +3,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Contact</title>
     <style>
-    
-    body {
-  	padding-top: 54px;
-	}
 
-@media (min-width: 992px) {
-  body {
-    padding-top: 56px;
-  	}
-}
     </style>
 </head>
 <body>

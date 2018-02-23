@@ -7,16 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Supplier</title>
 <style>
-    
-    body {
-  	padding-top: 54px;
-	}
-
-@media (min-width: 992px) {
-  body {
-    padding-top: 56px;
-  	}
-}
+ 
 form {
 padding-left: 100px;
 }
