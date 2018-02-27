@@ -38,7 +38,7 @@ th, td {
 
 <div class="container">
   <h2>Add Product</h2>
-  <form:form modelAttribute="product" class="form-horizontal" action="InsertProduct" method="post">
+  <form:form modelAttribute="product" class="form-horizontal" action="InsertProduct" method="post" enctype="multipart/form-data">
     <div class="form-group">
       <label class="control-label col-sm-2" for="email">Product Name:</label>
       <div class="col-sm-3">
@@ -58,21 +58,33 @@ th, td {
       </div>
     </div>
     <div class="form-group">
-      <label class="control-label col-sm-2" for="pwd">Category Id:</label>
+      <label class="control-label col-sm-2" for="pwd">Category:</label>
       <div class="col-sm-3">          
-        <form:input path="categoryId" type="number" class="form-control" placeholder="Enter Category Id"/>
+        <form:select path="categoryId" type="number" class="form-control">
+   			<form:option value="0" label="---select list---"/>
+        		<form:options items="${categoryList}"/>
+        </form:select>
       </div>
     </div>
     <div class="form-group">
-      <label class="control-label col-sm-2" for="pwd">Supplier Id:</label>
+      <label class="control-label col-sm-2" for="pwd">Supplier:</label>
       <div class="col-sm-3">          
-        <form:input path="supplierId" type="number" class="form-control" placeholder="Enter Supplier Id" />
+        <form:select path="supplierId" type="number" class="form-control">
+   			<form:option value="0" label="---select list---"/>
+        		<form:options items="${supplierList}"/>
+        </form:select>
       </div>
     </div>
     <div class="form-group">
       <label class="control-label col-sm-2" for="pwd">Product Description:</label>
       <div class="col-sm-3">          
         <form:input path="productDesc" type="text" class="form-control" placeholder="Enter Product Description"/>
+      </div>
+    </div>
+    <div class="form-group">
+    <label class="control-label col-sm-2" for="image">Product Image:</label>
+      <div class="col-sm-3">          
+        <form:input path="pimage" type="file" class="form-control" />
       </div>
     </div>
     <div class="form-group">        
@@ -82,6 +94,10 @@ th, td {
     </div>
   </form:form>
 </div>
+
+<font color="red"><h3>
+${ErrorInfo}
+</h3></font>
 
 <table align="center">
   <thead>	
@@ -93,6 +109,7 @@ th, td {
 		<th>Category ID</th>
 		<th>Supplier ID</th>
 		<th>Product Description</th>
+		<th>Product Image</th>
 		<th>Operation</th>
 	</tr>
   </thead>
@@ -106,6 +123,9 @@ th, td {
 		<td>${product.categoryId}</td>
 		<td>${product.supplierId}</td>
 		<td>${product.productDesc}</td>
+		<td>
+			<img src="<c:url value="/resources/Images/${product.productId}.jpg"/>" width="50" height="50"/>
+		</td>
 		<td>
 			<a href="<c:url value='EditProduct,${product.productId}'/>">Edit</a>/
 			<a href="<c:url value='DeleteProduct,${product.productId}'/>">Delete</a>
