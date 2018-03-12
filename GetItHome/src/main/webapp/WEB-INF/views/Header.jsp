@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <%@ taglib  uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib  uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <html lang="en">
 <head>
   <title>Header</title>
@@ -20,6 +21,55 @@
     li a {
     color:white;
     }
+
+.sticky-container{
+		/*background-color: #333;*/
+		padding: 0px;
+		margin: 0px;
+		position: fixed;
+		right: -120px;
+		top:250px;
+		width: 200px;
+		z-index:9999;
+	}
+	.sticky li{
+		list-style-type: none;
+		background-color: #fff;
+		color: #efefef;
+		padding: 0px;
+		margin: 0px 0px 5px 0px;
+		-webkit-transition:all 0.25s ease-in-out;
+		-moz-transition:all 0.25s ease-in-out;
+		-o-transition:all 0.25s ease-in-out;
+		transition:all 0.25s ease-in-out;
+		cursor: pointer;
+		border:1px solid #e5e5e5;
+             
+	}
+	.sticky li:hover{
+		margin-left: -85px;
+		/*-webkit-transform: translateX(-115px);
+		-moz-transform: translateX(-115px);
+		-o-transform: translateX(-115px);
+		-ms-transform: translateX(-115px);*/
+		/*transform:translateX(-115px);*/
+		/*background-color: #8e44ad;*/
+		color:red;
+		
+	}
+	.sticky li img{
+		float: left;
+		margin: 5px 5px;
+		margin-right: 10px;
+	}
+	.sticky li span{
+		padding: 0px;
+		margin: 0px;
+		text-transform: uppercase;
+		line-height: 43px;
+		color:#36361F;
+
+	}
  
   </style>
 </head>
@@ -46,7 +96,7 @@
         <li><a href="category">Category</a></li>
         <li><a href="supplier">Supplier</a></li>
         <li><a href="contact">Contact</a></li>
-        <li><a href="contact">SignUp</a></li>
+        <li><a href="signup">SignUp</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
 		<li><a type="button" data-target="#myModal" data-toggle="modal"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
@@ -98,6 +148,21 @@
     </div>
   </div>
 </nav>
+
+<!-- Social links aligned right  -->
+<div class="sticky-container">
+	<ul class="sticky">
+			<li>
+				<img width="32" height="32" title="Facebook" alt="" src="<spring:url value="/resources/Images/facebook-icon.png/"/>" />
+				<a href="https://www.facebook.com" target="_blank"><span>Facebook</span></a>
+			</li>
+			<li>
+				<img width="32" height="32" title="Linkedin" alt="" src="<spring:url value="/resources/Images/linkedin-icon.png/"/>" />
+				<a href="https://www.linkedin.com/" target="_blank"><span>Linkedin</span></a>
+			</li>
+	</ul>
+</div> 
+
 
 </body>
 </html>

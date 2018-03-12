@@ -2,7 +2,6 @@ package com.DBconfig;
 
 import java.util.Properties;
 
-
 import javax.sql.DataSource;
 
 import org.hibernate.SessionFactory;
@@ -62,7 +61,7 @@ public class HibernateConfig {
 		lsfb.addAnnotatedClass(Product.class);
 		lsfb.addAnnotatedClass(User.class);
 		
-		SessionFactory sessionFactory= lsfb.buildSessionFactory();
+		SessionFactory sessionFactory= lsfb.buildSessionFactory();	
 		System.out.println("SessionFactory object created");
 		return sessionFactory;
 	}

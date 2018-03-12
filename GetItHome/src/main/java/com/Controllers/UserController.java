@@ -16,7 +16,7 @@ public class UserController {
 	@Autowired
 	UserDao userDao;
 	
-	@RequestMapping(value="/registeruser",method=RequestMethod.POST)
+	@RequestMapping(value="/InsertUser",method=RequestMethod.POST)
 	public String addUser(@ModelAttribute("user")User user,Model m) {
 		
 		userDao.registerUser(user);

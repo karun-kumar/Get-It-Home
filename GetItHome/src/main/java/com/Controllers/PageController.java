@@ -2,10 +2,12 @@ package com.Controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.DAOInterface.CategoryDao;
+import com.Model.User;
 
 @Controller
 public class PageController {
@@ -32,6 +34,12 @@ public class PageController {
 	@RequestMapping(value="/contact")
 	public String val3() {
 	return "Contact";	
+	}
+	
+	@RequestMapping(value="/signup")
+	public String val4(Model model) {
+		model.addAttribute("user", new User());
+		return "signup";	
 	}
 
 }
