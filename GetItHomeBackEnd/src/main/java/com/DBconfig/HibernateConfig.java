@@ -29,7 +29,7 @@ import com.Model.User;
 @EnableTransactionManagement
 public class HibernateConfig {
 	
-	
+	@Bean(name="DataSource")
 	public DataSource getH2Data() {
 		
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();

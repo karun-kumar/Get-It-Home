@@ -122,8 +122,8 @@ ${ErrorInfo}
 		<td>${product.stock}</td>
 		<td>${product.categoryId}</td>
 		<td>${product.supplierId}</td>
-		<td>${product.productDesc}</td>
 		<td>
+		<td>${product.productDesc}</td>
 			<img src="<c:url value="/resources/Images/${product.productId}.jpg"/>" width="50" height="50"/>
 		</td>
 		<td>

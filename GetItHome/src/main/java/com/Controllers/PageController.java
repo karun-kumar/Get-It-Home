@@ -1,5 +1,7 @@
 package com.Controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -7,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.DAOInterface.CategoryDao;
+import com.DAOInterface.ProductDao;
+import com.Model.Product;
 import com.Model.User;
 
 @Controller
@@ -15,12 +19,18 @@ public class PageController {
 	@Autowired
 	CategoryDao categoryDao;
 	
-	@RequestMapping(value= {"/" , "/home" , "/index" })
+	@Autowired
+	ProductDao productDao;
+	
+	@RequestMapping(value= {"/" , "/home" , "/index"})
 	public ModelAndView homePage(){
 		ModelAndView mv = new ModelAndView();
 		
 		/*adding the list of categories*/
 		mv.addObject("categories",categoryDao.listCategories());
+		List<Product> listProducts = productDao.listProducts();
+		mv.addObject("productList", listProducts);
+		
 		
 		mv.setViewName("index");
 		return mv;

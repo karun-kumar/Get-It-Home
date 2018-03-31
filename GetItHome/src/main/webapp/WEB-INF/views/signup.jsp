@@ -18,12 +18,18 @@ input[type=text] {
     border-bottom: 2px solid skyblue;
     resize: vertical;
 }
-div.col-lg-4 {
+div.col-md-4 {
     background-color: white;
     width: 500px;
     border: 2px solid black;
     padding: 25px 40px;
     margin: 25px;
+}
+div.col-md-6 {
+	padding: 50px;
+}
+div.col-md-6.h3 {
+	font-size: 60px;
 }
 hr {
     border: 1px solid black;
@@ -62,15 +68,17 @@ button:hover {
 <!-- Navigation -->
 <%@include file ="Header.jsp" %>
 
-<div class="row my-8">
+<div class="container-fluid">
+<div class="row">
    
-  <div class="col-lg-6">
-
-  
-  </div>
+	<div class="col-md-6 left-side" align="center">
+        <header>
+          <span>Need an account?</span>
+          <h3>Create Account<br>Make Deals</h3>
+        </header>
+      </div>  
 	
-	
-	<div class="col-lg-4">
+	<div class="col-md-4">
 	<h2 align="right">Sign Up</h2>
 	<hr>
 	<form:form modelAttribute="user" action="InsertUser" method="post">
@@ -101,7 +109,7 @@ button:hover {
 	</form:form>	
   	</div>
   	</div>
-
+</div>
 <!-- 	Footer -->
 <%@include file = "Footer.jsp" %>
 </body>

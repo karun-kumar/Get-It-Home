@@ -99,54 +99,10 @@
         <li><a href="signup">SignUp</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-		<li><a type="button" data-target="#myModal" data-toggle="modal"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-      <!-- Modal -->
-			  <div class="modal fade" id="myModal" role="dialog">
-			    <div class="modal-dialog modal-md">
-			      <div class="modal-content">
-			        
-			        <div class="modal-header" >
-			          <button type="button" class="close" data-dismiss="modal">&times;</button>
-			          <h4 class="modal-title" align="center">Login</h4>
-			        </div>
-			     
-			     <div class="modal-body">
-			       
-			       <form class="form-horizontal" action="login" method="post">
-				    <div class="form-group">
-				      <label class="control-label col-sm-3" for="email">User Name:</label>
-				      <div class="col-sm-8">
-				        <input type="text" class="form-control" id="username" placeholder="Enter user name" name="username">
-				      </div>
-				    </div>
-				    <div class="form-group">
-				      <label class="control-label col-sm-3" for="pwd">Password:</label>
-				      <div class="col-sm-8">          
-				        <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
-				      </div>
-				    </div>
-				    <div class="form-group">        
-				      <div class="col-sm-offset-2 col-sm-10">
-				        <div class="checkbox">
-				          <label><input type="checkbox" name="remember"> Remember me</label>
-				        </div>
-				      </div>
-				    </div>
-				    
-			        <div class="modal-footer">
-			          <button type="submit" class="btn btn-info">Login</button>
-			          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>          
-			        </div>
-			      </form>
-			      
-			      </div>
-			    </div>
-			  </div>
-			</div>
-			      	
-		</ul>
-    </div>
-  </div>
+		<li><a type="button" href="login" ><span class="glyphicon glyphicon-log-in"></span> Login</a></li>	       
+	  </ul>	      
+	</div>
+</div>
 </nav>
 
 <!-- Social links aligned right  -->

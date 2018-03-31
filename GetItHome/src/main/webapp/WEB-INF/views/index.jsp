@@ -7,10 +7,8 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
 	
-    <title>Get-It-Home</title>
+    <title>Techno-World</title>
 
     <style>
 .dropdown {
@@ -39,8 +37,8 @@
 .dropdown:hover .dropdown-content {
     display: block;
 }
-
-    </style>
+   
+   </style>
   </head>
 
   <body>
@@ -70,7 +68,7 @@
 						src="<spring:url value="/resources/Images/slide-1.jpg/"/>" alt="first slide">
 					<div class="carousel-caption">
 					</div>
-				</div>
+				</div> 	
 				<div class="item">
 					<img class="img-responsive center block"
 						src="<spring:url value="/resources/Images/slide-2.jpg/"/>" alt="Second slide">
@@ -97,6 +95,7 @@
 
         </div>
         <!-- /.col-lg-8 -->
+        
         <div class="col-lg-4">
           <h1>Techno-World</h1>
           <p>B2C Business to Consumer. Where you can go with the latest techologies like Laptops, SmartPhones and SmartTv's. Choose your best product as per your requirement, We Value our customer to satisfy in delivering the products safe and secure payments. </p>
@@ -126,45 +125,17 @@
       </div>
 
       <!-- Content Row -->
-      <div class="row">
-        <div class="col-md-4 mb-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <h2 class="card-title">Card One</h2>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
-            </div>
-            <div class="card-footer">
-              <a href="#" class="btn btn-primary">More Info</a>
-            </div>
-          </div>
-        </div>
-        <!-- /.col-md-4 -->
-        <div class="col-md-4 mb-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <h2 class="card-title">Card Two</h2>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod tenetur ex natus at dolorem enim! Nesciunt pariatur voluptatem sunt quam eaque, vel, non in id dolore voluptates quos eligendi labore.</p>
-            </div>
-            <div class="card-footer">
-              <a href="#" class="btn btn-primary">More Info</a>
-            </div>
-          </div>
-        </div>
-        <!-- /.col-md-4 -->
-        <div class="col-md-4 mb-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <h2 class="card-title">Card Three</h2>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
-            </div>
-            <div class="card-footer">
-              <a href="#" class="btn btn-primary">More Info</a>
-            </div>
-          </div>
-        </div>
-        <!-- /.col-md-4 -->
-
-      </div>
+    <div class="row">
+  	<div class="col-xs-4">
+    <div class="inline-block">
+    <c:forEach items="${productList}" var="product">
+      <img src="<c:url value="/resources/Images/${product.productId}.jpg"/>" alt="Products" style="width:100%">
+      <h4>${product.productName}</h4>
+      <p>${product.price}</p>
+    </c:forEach>
+    </div>
+    </div>
+  </div>      
       <!-- /.row -->
 
     </div>
