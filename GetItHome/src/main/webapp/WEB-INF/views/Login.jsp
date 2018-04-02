@@ -28,10 +28,6 @@
 <div id="login-box">
 <h3> Login with UserName and Password </h3>
 
-	<c:if test="${not empty error}">
-			<div class="error">${error}</div>
-	</c:if>
-
 <form name='loginForm'
 		  action="<c:url value='loginpage' />" method="post">
 

@@ -88,19 +88,51 @@
     	</ul>   	
     </div>
        
-    <div class="collapse navbar-collapse" id="myNavbar">    	
+    <div class="collapse navbar-collapse" id="myNavbar">
+    <c:if test="${!sessionScope.loggedIn}">    	
       <ul class="nav navbar-nav navbar-right">
         <li class="active"><a href="home"><i class="fa fa-home" style="font-size:20px"></i></a></li>
         <li><a href="about" >About</a></li>
-        <li><a href="product">Products</a></li>
-        <li><a href="category">Category</a></li>
-        <li><a href="supplier">Supplier</a></li>
+<!--         <li><a href="product">Products</a></li> -->
+<!--         <li><a href="category">Category</a></li> -->
+<!--         <li><a href="supplier">Supplier</a></li> -->
         <li><a href="contact">Contact</a></li>
         <li><a href="signup">SignUp</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
 		<li><a type="button" href="login" ><span class="glyphicon glyphicon-log-in"></span> Login</a></li>	       
-	  </ul>	      
+	  </ul>
+	  </c:if>	      
+	<c:if test="${sessionScope.loggedIn}">
+		<c:if test="${sessionScope.role=='ROLE_USER'}">	    	
+	      <ul class="nav navbar-nav navbar-right">
+	        <li class="active"><a href="home"><i class="fa fa-home" style="font-size:20px"></i></a></li>
+	        <li><a href="about" >About</a></li>
+<!-- 	        <li><a href="product">Products</a></li> -->
+	<!--         <li><a href="category">Category</a></li> -->
+	<!--         <li><a href="supplier">Supplier</a></li> -->
+	        <li><a href="contact">Contact</a></li>
+	        <li><a type="button" href="cart" ><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a></li>
+	      </ul>
+	      <ul class="nav navbar-nav navbar-right">
+			<li><a type="button" href="<c:url value="/logout"/> "><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>	       
+		  </ul>
+	  </c:if>
+	  <c:if test="${sessionScope.role=='ROLE_ADMIN'}">	    	
+	      <ul class="nav navbar-nav navbar-right">
+	        <li class="active"><a href="home"><i class="fa fa-home" style="font-size:20px"></i></a></li>
+<!-- 	        <li><a href="about" >About</a></li> -->
+	        <li><a href="product">Products</a></li>
+	        <li><a href="category">Category</a></li>
+	        <li><a href="supplier">Supplier</a></li>
+<!-- 	        <li><a href="contact">Contact</a></li> -->
+	<!--         <li><a href="signup">SignUp</a></li> -->
+	      </ul>
+	      <ul class="nav navbar-nav navbar-right">
+			<li><a type="button" href="<c:url value="/logout"/> "><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>	       
+		  </ul>
+	  </c:if>
+	</c:if>  	      
 	</div>
 </div>
 </nav>

@@ -155,5 +155,26 @@ public class ProductController {
 		mv.setViewName("Product");
 		return mv;
 	}
+	
+	@RequestMapping(value ="/viewProducts,{categoryId}",method=RequestMethod.GET)
+	public ModelAndView viewProducts(@PathVariable("categoryId")int categoryid, Model m) {
+		
+		List<Product> listProducts = productDao.listProducts();
+		m.addAttribute("productList", listProducts);
+		
+		m.addAttribute("categoryid",categoryid);
+		
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("ViewProducts");
+		return mv;
+	}
+	
+	@RequestMapping(value="/ProductDesc,{productId}",method=RequestMethod.GET)
+	public String productDesc(@PathVariable("productId")int productid,Model m) {
+		Product product =productDao.getProduct(productid);
+		m.addAttribute("product",product);
 
+		return "ProductDesc";
+	}
 }
+

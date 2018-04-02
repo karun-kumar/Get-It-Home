@@ -12,13 +12,15 @@ public class Cart {
 	@Id
 	@GeneratedValue
 	private int cartId;
+	
 	private int productId;
+	private String userName;
 	private String productName;
 	private int price;
 	
 	private String status;
 	private int quantity;
-	
+						
 	public int getCartId() {
 		return cartId;
 	}
@@ -30,6 +32,12 @@ public class Cart {
 	}
 	public void setProductId(int productId) {
 		this.productId = productId;
+	}
+	public String getUserName() {
+		return userName;
+	}
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 	public String getProductName() {
 		return productName;

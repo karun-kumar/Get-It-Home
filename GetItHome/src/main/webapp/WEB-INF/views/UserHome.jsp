@@ -5,10 +5,11 @@
 <title>USER AUTHORITY</title>
 </head>
 <body>
-<h1>This is a User Home page.</h1>
-	<h3>Message: ${message}</h3>
-	<h3>Username: ${username}</h3>
-	
-	<a href="<c:url value="/logout"/> ">Logout</a>
+<!-- Navigation -->
+<%@include file="Header.jsp" %>
+
+
+<!-- Footer	 -->
+<%@include file="Footer.jsp" %>
 </body>
 </html>
