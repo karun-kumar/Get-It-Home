@@ -14,16 +14,19 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.DAOImplements.CartDaoImpl;
 import com.DAOImplements.CategoryDaoImpl;
+import com.DAOImplements.OrderDaoImpl;
 import com.DAOImplements.ProductDaoImpl;
 import com.DAOImplements.SupplierDaoImpl;
 import com.DAOImplements.UserDaoImpl;
 import com.DAOInterface.CartDao;
 import com.DAOInterface.CategoryDao;
+import com.DAOInterface.OrderDao;
 import com.DAOInterface.ProductDao;
 import com.DAOInterface.SupplierDao;
 import com.DAOInterface.UserDao;
 import com.Model.Cart;
 import com.Model.Category;
+import com.Model.Order;
 import com.Model.Product;
 import com.Model.Supplier;
 import com.Model.User;
@@ -64,6 +67,7 @@ public class HibernateConfig {
 		lsfb.addAnnotatedClass(Product.class);
 		lsfb.addAnnotatedClass(User.class);
 		lsfb.addAnnotatedClass(Cart.class);
+		lsfb.addAnnotatedClass(Order.class);
 		
 		SessionFactory sessionFactory= lsfb.buildSessionFactory();	
 		System.out.println("SessionFactory object created");
@@ -93,6 +97,11 @@ public class HibernateConfig {
 	@Bean(name="cartDao")
 	public CartDao getCartDao() {
 		return new CartDaoImpl();
+	}
+	
+	@Bean(name="orderDao")
+	public OrderDao getOrderDao() {
+		return new OrderDaoImpl();
 	}
 
 	@Bean

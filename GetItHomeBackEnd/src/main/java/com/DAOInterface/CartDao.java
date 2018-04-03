@@ -10,5 +10,5 @@ public interface CartDao {
 	public boolean deleteFromCart(Cart cart);
 	public boolean updateFromCart(Cart cart);
 	public Cart getCart(int cartId);
-	public List<Cart> listCartItems();
+	public List<Cart> listCartItems(String userName);
 }

@@ -67,9 +67,11 @@ public class CartDaoImpl implements CartDao{
 
 	@Transactional
 	@Override
-	public List<Cart> listCartItems() {
+	public List<Cart> listCartItems(String userName) {
 		Session session = sessionFactory.openSession();
-		Query query = session.createQuery("from Cart");
+		Query query = session.createQuery("from Cart where status=:paidstatus and userName=:username");
+		query.setParameter("paidstatus", "NP");
+		query.setParameter("username", userName);
 		List<Cart> listCartItems = query.list();
 		session.close();
 		return listCartItems;

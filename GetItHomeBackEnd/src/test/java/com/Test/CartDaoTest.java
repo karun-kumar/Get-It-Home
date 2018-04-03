@@ -64,7 +64,7 @@ static CartDao cartDao;
 	@Ignore
 	@Test
 	public void listCategoriesTest() {
-		List<Cart> listCartItems = cartDao.listCartItems();
+		List<Cart> listCartItems = cartDao.listCartItems("kiran");
 
 		assertNotNull("problem in providing the list of categories",listCartItems);	
 		}
