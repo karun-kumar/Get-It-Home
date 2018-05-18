@@ -41,7 +41,7 @@ static CartDao cartDao;
 		cart.setStatus("NP");
 		cart.setUserName("kiran");
 		
-		assertTrue("problem in adding category",cartDao.addToCart(cart));
+		assertTrue("problem in adding cart",cartDao.addToCart(cart));
 		
 	}
 	@Ignore
@@ -51,7 +51,7 @@ static CartDao cartDao;
 		Cart cart = cartDao.getCart(42);
 		cart.setQuantity(4);
 		
-		assertTrue("problem in adding category",cartDao.updateFromCart(cart));	
+		assertTrue("problem in adding cart",cartDao.updateFromCart(cart));	
 	}
 	
 	@Ignore

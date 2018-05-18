@@ -48,12 +48,12 @@ public class HibernateConfig {
 	}
 	
 	private Properties getHiber() {
-		Properties p = new Properties();
-		p.put("hibernate.dialect","org.hibernate.dialect.H2Dialect");
-		p.put("hibernate.hbm2ddl.auto","update");
-		p.put("hibernate.show_sql","true");
-		System.out.println("Tables Created");
-		return p;
+ 		Properties p = new Properties();
+ 		p.put("hibernate.dialect","org.hibernate.dialect.H2Dialect");
+ 		p.put("hibernate.hbm2ddl.auto","update");
+ 		p.put("hibernate.show_sql","true");
+ 		System.out.println("Tables Created");
+ 		return p;
 	}
 	
 	@Bean(name="sessionFactory")
@@ -101,6 +101,7 @@ public class HibernateConfig {
 	
 	@Bean(name="orderDao")
 	public OrderDao getOrderDao() {
+		System.out.println("The order bean is created");
 		return new OrderDaoImpl();
 	}
 

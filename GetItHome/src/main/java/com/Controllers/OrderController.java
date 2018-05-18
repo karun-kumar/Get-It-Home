@@ -52,6 +52,8 @@ public class OrderController {
 		order.setTotalAmountPaid(this.calcTotalAmount(listCartItems));
 		order.setOrderDate(new java.util.Date());
 		
+		orderDao.paymentProcess(order);
+		
 		return "ThankYou";
 	}
 	

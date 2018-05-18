@@ -8,17 +8,17 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table
+@Table(name="myOrder")
 public class Order {
 
 	@Id
 	@GeneratedValue
-	int orderId;
+	private int orderId;
 	
-	String username;
-	Date orderDate;
-	int totalAmountPaid;
-	String paymentMode;
+	private String username;
+	private Date orderDate;
+	private int totalAmountPaid;
+	private String paymentMode;
 	
 	public int getOrderId() {
 		return orderId;
@@ -37,7 +37,8 @@ public class Order {
 	}
 	public void setOrderDate(Date orderDate) {
 		this.orderDate = orderDate;
-	}
+		}
+	
 	public int getTotalAmountPaid() {
 		return totalAmountPaid;
 	}
